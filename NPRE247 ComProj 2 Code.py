@@ -24,16 +24,14 @@ scloss2G = np.diag(np.sum(scgain2G,axis = 0))
 migration2G = np.diag(input2GXs['Sigma_a']) + scloss2G - scgain2G
 fissionmat2G = np.array([input2GXs['X']]).T@np.array([input2GXs['Sigma_f']])
 bmat2G = np.linalg.inv(migration2G)@fissionmat2G
-# final calculation
+# final calculations
 eigval2G,eigvec2G = np.linalg.eig(bmat2G)
-eigvec2G[:,np.argmax(eigval2G)]
-# power iteration calculation
 pit2G = pit(bmat2G,10)
 
 # 2 group output
 # guess what. all formatting.
 # power iteration frames
-pit2Geigval = pd.DataFrame(np.array([pit2G[0][0,0]]), columns = ["power eigenvalues"])
+pit2Geigval = pd.DataFrame(np.array([pit2G[0][0,0]]), columns = ["power eigenvalue"])
 pit2Geigvec = pd.DataFrame(pit2G[1][:,0], columns = ["power eigenvector"])
 pit2Gframe = pd.concat([pit2Geigval,pit2Geigvec],axis = 1)
 # computation frames
@@ -54,16 +52,14 @@ scloss8G = np.diag(np.sum(scgain8G,axis = 0))
 migration8G = np.diag(input8GXs['Sigma_a']) + scloss8G - scgain8G
 fissionmat8G = np.array([input8GXs['X']]).T@np.array([input8GXs['Sigma_f']])
 bmat8G = np.linalg.inv(migration8G)@fissionmat8G
-# final calculation
+# final calculations
 eigval8G,eigvec8G = np.linalg.eig(bmat8G)
-eigvec8G[:,np.argmax(eigval8G)]
-# power iteration calculation
 pit8G = pit(bmat8G,10)
 
 # 8 group output
 # all formatting... TWO
 # power iteration frames
-pit8Geigval = pd.DataFrame(np.array([pit8G[0][0,0]]), columns = ["power eigenvalues"])
+pit8Geigval = pd.DataFrame(np.array([pit8G[0][0,0]]), columns = ["power eigenvalue"])
 pit8Geigvec = pd.DataFrame(pit8G[1][:,0], columns = ["power eigenvector"])
 pit8Gframe = pd.concat([pit8Geigval,pit8Geigvec],axis = 1)
 # computation frames
