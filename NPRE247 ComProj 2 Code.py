@@ -31,7 +31,7 @@ pit2G = pit(bmat2G,10)
 # 2 group output
 # guess what. all formatting.
 # power iteration frames
-pit2Geigval = pd.DataFrame(np.array([pit2G[0][0,0]]), columns = ["power eigenvalue"])
+pit2Geigval = pd.DataFrame(np.array([pit2G[0][0,0]]), columns = ["power eigenvalues"])
 pit2Geigvec = pd.DataFrame(pit2G[1][:,0], columns = ["power eigenvector"])
 pit2Gframe = pd.concat([pit2Geigval,pit2Geigvec],axis = 1)
 # computation frames
@@ -59,7 +59,7 @@ pit8G = pit(bmat8G,10)
 # 8 group output
 # all formatting... TWO
 # power iteration frames
-pit8Geigval = pd.DataFrame(np.array([pit8G[0][0,0]]), columns = ["power eigenvalue"])
+pit8Geigval = pd.DataFrame(np.array([pit8G[0][0,0]]), columns = ["power eigenvalues"])
 pit8Geigvec = pd.DataFrame(pit8G[1][:,0], columns = ["power eigenvector"])
 pit8Gframe = pd.concat([pit8Geigval,pit8Geigvec],axis = 1)
 # computation frames
