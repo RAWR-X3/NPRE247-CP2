@@ -9,5 +9,4 @@
 
 ### How to use the code:
 1. Download the Input Excel Files and Code to the same folder.
-2. 
-3. Run the code <ins>from the folder it is located in</ins>, find output files in the same folder it was ran from.
+2. Run the code <ins>from the folder it is located in</ins>, find output files in the same folder it was ran from.
